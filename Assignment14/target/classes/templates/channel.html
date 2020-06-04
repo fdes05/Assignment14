@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://thymeleaf.org">
+	<head>
+		<title>channel</title>
+		<link rel="stylesheet" type="text/css" href="channel.css" />
+	</head>
+	
+	<body>
+		<h2 th:text=${channel.channelName}></h2>
+		<div style="display: none" th:each="message : ${messages}" id="textbox">
+			<span th:inline="text" id="userName">[[${message.getUserName()}]]</span>
+			<span th:text="${message.getMessage()}" id="message"></span>
+		</div> 
+		<hr/>
+		<div id="box" style="border: 2px solid black ;max-width: 200px">
+			<span id="userName1" style="font-weight: bold"></span>
+			<span id="message1"></span><br/>
+			<span id="userName2" style="font-weight: bold"></span>
+			<span id="message2"></span><br/>
+			<span id="userName3" style="font-weight: bold"></span>
+			<span id="message3"></span><br/>
+			<span id="userName4" style="font-weight: bold"></span>
+			<span id="message4"></span><br/>
+			<span id="userName5" style="font-weight: bold"></span>
+			<span id="message5"></span>
+		</div>
+		<br/>
+		<input type="text" id="inputBox" onclick="this.value=''"/>
+		<span style="display: none" th:text=${channel.channelId} id="channelId"></span>
+						
+		<script type="text/javascript" src="/channel.js"></script>
+	
+		
+	</body>
+
+</html>

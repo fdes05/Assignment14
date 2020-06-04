@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<title>Welcome</title>
+	</head>
+	<body>
+		<h2>Join a Channel</h2>
+		
+		<div th:each = "channel : ${channels}">
+			<a th:href = "@{/channel/{channelId}(channelId = ${channel.channelId})}">
+				<span th:text = ${channel.channelName}></span>
+			</a>
+			
+		</div>
+		<hr>
+		<h3>Create your own Channel</h3>
+		<form action = "" method = "post">
+			<div>
+				Channel Name: <input type="text" th:field=${newChannel.channelName}/>
+			</div>
+			<input type="submit" value="Create New Channel" />
+		</form>
+		
+		<script type = "text/javascript" src = "welcome.js"></script>
+	
+	</body>
+</html>

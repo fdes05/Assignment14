@@ -1,0 +1,10 @@
+#box {
+	border: 2px solid black;
+	max-height: 200px;
+	max-width: 400px;
+	font-weight: bold;
+}
+
+#userName1{
+	color: red;
+}
